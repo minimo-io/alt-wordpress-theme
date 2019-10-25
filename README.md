@@ -16,7 +16,7 @@ Help us improve it!
 For a full list of future features visit https://minimo.io/en/2019/10-alt-wordpress-theme/#roadmap
 
 ## Known bugs
-For a full list of known bugs visit https://minimo.io/2019/10-alt-wordpress-theme/#bugs
+For a full list of known bugs visit https://minimo.io/en/2019/10-alt-wordpress-theme/#bugs
 
 If you have some more please submit an Issue, and let us know! If you have the guts, help us with some coding and [submit a Pull Request](https://github.com/minimo-io/alt-wordpress-theme/pulls) (we are -for the most part- nice people :)
 
