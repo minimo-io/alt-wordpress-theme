@@ -53,8 +53,8 @@ if ( ! function_exists( 'alt_setup' ) ) :
 		add_theme_support(
 			'custom-logo',
 			array(
-				'height'      => 40,
-				'width'       => 85,
+				'height'      => 68,
+				'width'       => 288,
 				'flex-height' => true,
 			)
 		);
