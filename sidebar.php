@@ -9,8 +9,11 @@
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo_url = wp_get_attachment_image_src( $custom_logo_id , 'full' );
         $logo_url = $logo_url[0];
+        echo '<img class="alt-header__logo" src="'.esc_attr($logo_url).'" />';
+      }else{
+        bloginfo("name");
       }
-      echo '<img class="alt-header__logo" src="'.esc_attr($logo_url).'" />';
+
       ?>
     </a>
 
