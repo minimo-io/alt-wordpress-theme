@@ -3,7 +3,7 @@ Contributors: minimoio
 Requires at least: WordPress 4.4
 Tested up to: WordPress 5.2.4
 Requires PHP: 5.2.4
-Version: 0.5
+Version: 0.5.1
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, photography, grid-layout, one-column, custom-header, custom-menu, featured-images, post-formats, sticky-post, translation-ready
@@ -44,9 +44,16 @@ but WITHOUT ANY WARRANTY; without even the implied warranty of
 MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
 GNU General Public License for more details.
 
-Image used in screenshot.png: A photo by Johannes Plenio (https://pixabay.com/users/jplenio-7645255/), licensed under Pixabay License(https://pixabay.com/service/license/)
+Images used in screenshot.png. All licensed under CC0 Public Domain (https://creativecommons.org/publicdomain/zero/1.0/)
+A photo by George Holdan (https://www.publicdomainpictures.net/en/view-image.php?image=199390&picture=alone-tree), CC0 Public Domain.
+A photo by Vera Kratochvil (https://www.publicdomainpictures.net/en/view-image.php?image=306272&picture=hay-bales-on-a-field), CC0 Public Domain.
+A photo by Monika Stawowy (https://www.publicdomainpictures.net/en/view-image.php?image=239787&picture=mountain-landscape), CC0 Public Domain.
+A photo by Jean Beaufort (https://www.publicdomainpictures.net/en/view-image.php?image=209790&picture=beach-fun), CC0 Public Domain.
 
 == Changelog ==
+
+= 0.5.1 =
+* Released: October 29, 2019
 
 = 0.5 =
 * Released: October 23, 2019
@@ -56,6 +63,6 @@ Initial release
 == Resources ==
 * HTML5 Shiv © @afarkas @jdalton @jon_neal @rem. MIT/GPL2 Licensed
 * FontAwesome © CC BY 4.0 License
-* Bootstrap v4.3.1 © Copyright 2011-2019 The Bootstrap Authors (https://github.com/twbs/bootstrap/graphs/contributors)
+* Bootstrap v4.3.1 © Copyright 2011-2019 Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
 * Popper © Distributed under the MIT License Copyright (C) Federico Zivolo 2017
 * jQuery © jQuery Foundation. jquery.org/license

@@ -6,7 +6,9 @@
 
         <div class="nav-scroller bg-white">
 					<div class="container second-container">
-
+						<div class="alert alert-warning text-center" role="alert">
+						  <h1 class="home-title post-title basic-mono"><?php echo get_bloginfo("description"); ?><sup><a style="color:rgb(133, 100, 4);" title="Nosotros" class="home-title-link" href="<?php echo esc_attr(get_option( "alt_us_url" )) ?>"><i class="fas fa-info-circle"></i></a></sup></h1>
+						</div>
 						<?php
 						$sticky = get_option( 'sticky_posts' );
 						if (is_home() && !is_paged()){
@@ -42,14 +44,14 @@
 
 													$badge_color = alt_tax_color($cat);
 													if ($html_cats != "") $html_cats .= " ";
-													$html_cats .= '<a href="'.get_category_link( $cat->term_id ).'" class="badge badge-'.$badge_color.' Xbadge-featured">'.$cat->name.'</a>';
+													$html_cats .= '<a href="'.esc_attr(get_category_link( $cat->term_id )).'" class="badge badge-'.$badge_color.' Xbadge-featured">'.$cat->name.'</a>';
 												}
 											}
 											?>
 								      <div class="carousel-item <?php echo ($c_carrousel == 0 ? "active" : ""); ?>">
 												<a href="<?php the_permalink(); ?>">
 													<div class="overlay overlay-<?php echo $badge_color; ?>"></div>
-									        <?php if ($image_url){ ?><img class="d-block w-100 img-fluid rounded" alt="carousel-image-1" src="<?php echo $image_url; ?>"><?php } ?>
+									        <?php if ($image_url){ ?><img class="d-block w-100 img-fluid rounded" alt="carousel-image-1" src="<?php echo esc_attr($image_url); ?>"><?php } ?>
 
 													<div class="card">
 				 										 <div class="card-body">
@@ -57,8 +59,8 @@
 				 												 <div class="card-text card-excerpt"><?php the_excerpt(); ?></div>
 				 												 <div class="card-text card-meta">
 				 													 <small class="text-muted">
-				 														 <?php echo __("By ", "altminimo").$author_name; ?> &nbsp;
-				 														 <?php echo get_the_date('j M') ?>
+				 														 <?php echo __("By ", "altminimo")." ".esc_html($author_name); ?> &nbsp;
+				 														 <?php echo esc_html(get_the_date('j M')); ?>
 				 														 <?php echo $html_cats; ?>
 				 													 </small>
 				 												 </div>
@@ -113,11 +115,11 @@
 							endwhile;
 							echo '</ul></div>';
 						else :
+							if (empty($sticky)){
 							?>
-							<h2 class="post-subtitle" style="font-size:25px;">
-							 <?php _e( 'This is sad... we have nothing to show yet :\\', 'altminimo' ); ?>
-						 </h2>
-						 <?php
+								<h2 class="post-subtitle" style="font-size:25px;"><?php _e( 'This is sad... we have nothing to show yet :\\', 'altminimo' ); ?></h2>
+						 	<?php
+					 		}
 						endif;
 					?>
 					</div>

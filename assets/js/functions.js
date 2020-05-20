@@ -13,15 +13,15 @@ var alt_menu_close = function(){
 jQuery(document).ready(function(){
   jQuery('#alt-modal').on('show.bs.modal', function () {
     alt_menu_close();
-    jQuery('.modal .modal-dialog').removeClass("flipOutX").addClass('modal-dialog flipInX animated faster');
+    jQuery('#alt-modal.modal .modal-dialog').removeClass("flipOutX").addClass('modal-dialog flipInX animated faster');
   });
   jQuery('#alt-modal').on('hide.bs.modal', function () {
-    jQuery('.modal .modal-dialog').addClass('modal-dialog flipOutX animated');
+    jQuery('#alt-modal.modal .modal-dialog').addClass('modal-dialog flipOutX animated');
   });
   // when animation ends focus on search element
-  jQuery('.modal .modal-dialog').on("animationend", function(){
-    jQuery("#search-field").focus().select();
-  });
+  // jQuery('#alt-modal.modal .modal-dialog').on("animationend", function(){
+  //   jQuery("#search-field").focus().select();
+  // });
 });
 
 
@@ -96,7 +96,7 @@ jQuery(document).ready(function(){
     $(".carousel-featured span.carousel-title, .badge-featured").css("opacity", "0.5");
   });
 
-  $(".btn-readmore").click(function(){
+  $("#btn-readmore").click(function(){
 
     var $up = $(".post-subtitle");
     var $this = $(this);
@@ -108,20 +108,27 @@ jQuery(document).ready(function(){
 
     if (status == "off"){
 
+      if (original_height == "") {
+        $this.data("original-height", $up.height());
+      }
 
-      if (original_height == "") $this.data("original-height", $up.height());
+      var total_height = 0;
+      $(".post-subtitle p").each(function(){
+          total_height += $(this).outerHeight(true);
+      });
 
       $up.animate({
-        height: $(".post-subtitle p").height()
+        height: total_height
       }, {
         duration: speed_duration
       }).addClass("read-more-full");
 
       $this.text($this.data("text-less")).data("status", "on");
 
+
     }else if (status == "on"){
 
-
+      console.log("dont");
       $up.removeClass("read-more-full");
       $up.animate({
         height: original_height+"px"

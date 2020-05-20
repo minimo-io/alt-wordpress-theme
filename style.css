@@ -4,7 +4,7 @@ Theme URI: https://minimo.io/en/2019/10-alt-wordpress-theme/
 Author: Mínimo
 Author URI: https://minimo.io/
 Description: A content-focused minimalist theme by minimo.io
-Version: 0.5
+Version: 0.5.1
 License: GNU General Public License v2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 Tags: news, blog, photography, grid-layout, one-column, custom-header, custom-menu, featured-images, post-formats, sticky-post, translation-ready
@@ -190,7 +190,7 @@ blockquote.wp-block-quote p, blockquote.wp-block-quote cite{
   padding:0;
 }
 blockquote.wp-block-quote cite{
-  color:#838e95;
+  color:#7b868c;
 }
 blockquote.wp-block-quote p:first-of-type::first-letter{
   float: inherit;
@@ -222,7 +222,7 @@ display: block;
   background-size:cover;
   content: '';
 }
-.post-content h2, .post-content h3, .post-content h4{ font-weight: bold; }
+.post-content h2, .post-content h3, .post-content h4, .post-content h5{ font-weight: bold; }
 .post-content-end:after {
     content: '✦';
     display: block;
@@ -231,8 +231,10 @@ display: block;
     width: 100%;
     padding-top: 1.5rem;
 }
-
-
+.carousel-item img{
+  border-radius: 5px;
+}
+.subtitle{ margin-left:0 !important; font-family: Nunito, sans-serif !important;}
 
 #fullscreen-menu{
   z-index:100;
@@ -285,7 +287,7 @@ display: block;
   font-weight: 200;
   letter-spacing: normal;
   text-transform: none;
-  color: #838e95;
+  color: #7b868c;
   margin: 6%;
   margin-top: 1%;
   margin-bottom: 2%;
@@ -347,6 +349,7 @@ display: block;
 .post-title{
   margin-bottom:0;
   line-height: 2.5rem;
+  font-family: Nunito, "Space Mono";
 }
 .post-content{
   font-family: Nunito, "Space Mono";
@@ -370,7 +373,7 @@ display: block;
   font-size:.9rem;
 }
 .post-metabox-bottom, .post-metabox-bottom a{
-  color: #838e95;
+  color: #7b868c;
 }
 .post-metabox-right{
   padding:6px 15px;
@@ -378,7 +381,7 @@ display: block;
   text-align:left;
 }
 
-.post-bottom-metabox-right-by{ color:#838e95; font-size:.8rem; margin-bottom:1%; }
+.post-bottom-metabox-right-by{ color:#7b868c; font-size:.8rem; margin-bottom:1%; }
 .post-bottom-metabox-right-by .btn{
   padding: 0.2em !important;
   padding-bottom: 0;
@@ -807,6 +810,7 @@ a.alt-header__left__menu-trigger:hover{
   top:32px;
 }
 
+#mc-embedded-subscribe-form label{ color:#fff; }
 
 .alt-container {
     max-width: 140rem;
@@ -893,7 +897,8 @@ a.alt-header__left__menu-trigger:hover{
   margin-top:5px;
   font-style:italic;
 }
-
+.home-title{ font-size:1.2rem; color:rgb(133, 100, 4) !important;}
+.home-title-link:hover{color:black !important;}
 
 /* MAX MEDIA VIEWPORTS */
 @media (max-width: 730px){
@@ -901,16 +906,18 @@ a.alt-header__left__menu-trigger:hover{
   .alt-header__right{ padding-right:2rem; }
   .alt-header__left a, .alt-header__right a, .alt-separator{ font-size:13px; }
 
+  .home-title{ line-height: normal; }
   /* .carousel-featured h5{ font-size:1.2rem;} */
   /* .carousel-caption{ bottom:4%; } */
 }
 @media (max-width: 991px){
-  .modal .search-field, .modal .search-form input{ font-size:.7em; }
-  .modal .search-form input{ line-height:1.3; margin-bottom:.4em; }
+  .modal .search-field, .modal .search-form input, #mc-embedded-subscribe-form input, #mc-embedded-subscribe, #mc-embedded-subscribe-form label{ font-size:.7em; }
+  .modal .search-form input, #mc-embedded-subscribe{ line-height:1.3; margin-bottom:.4em; }
   .modal .search-form .btn-search-field{ line-height: 1.7;}
 
-
   .embed-responsive-21by9::before{ padding-top:60%;  }
+
+  .home-title{ line-height: normal; }
 }
 @media (max-width: 640px){
   .hide-730{ display:none; }
@@ -948,22 +955,27 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h2{ font-size:1.6rem; }
   .post-content h3{ font-size:1.4rem; }
   .post-content h4{ font-size:1.2rem; }
+  .post-content h5{ font-size:1rem; }
+
+  .home-title{ line-height: normal; }
 
 
 }
 @media (max-width: 575px){
-  .modal .search-field, .modal .search-form input{ font-size:.7em; }
-  .modal .search-form input{ line-height:1.3; margin-bottom:.4em; }
+  .modal .search-field, .modal .search-form input, #mc-embedded-subscribe-form input, #mc-embedded-subscribe, #mc-embedded-subscribe-form label{ font-size:.7em; }
+  .modal .search-form input, #mc-embedded-subscribe{ line-height:1.3; margin-bottom:.4em; }
 
   .btn-readmore{ top:-5px; font-size:15px; }
 
   blockquote.wp-block-quote::before{ width:62px; height:45px; }
   blockquote.wp-block-quote p, blockquote.wp-block-quote cite{ font-size: .84em; }
 
+  .home-title{ line-height: normal; }
+
 }
 @media (max-width: 512px){
-  .modal .search-field, .modal .search-form input{ font-size:.6em; }
-  .modal .search-form input{ line-height:1.3; margin-bottom:.4em; }
+  .modal .search-field, .modal .search-form input, #mc-embedded-subscribe-form input, #mc-embedded-subscribe, #mc-embedded-subscribe-form label{ font-size:.6em; }
+  .modal .search-form input, #mc-embedded-subscribe{ line-height:1.3; margin-bottom:.4em; }
 
   .btn-readmore{ top:0px; font-size:13px; }
   .category-title, .post-title{ font-size:2rem; }
@@ -973,6 +985,12 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h2{ font-size:1.6rem; }
   .post-content h3{ font-size:1.4rem; }
   .post-content h4{ font-size:1.2rem; }
+  .post-content h5{ font-size:1.1rem; }
+
+  .alt-header__logo{ width:70px; }
+  .alt-header__logo__link{ width:5.2rem; }
+
+  .home-title{ line-height: normal; }
 }
 @media (max-width: 340px){
   .hide-730{ display:none; }
@@ -1006,8 +1024,8 @@ a.alt-header__left__menu-trigger:hover{
   .alt-header__logo{ width:70px; }
   .alt-header__logo__link{ width:5.2rem; }
 
-  .modal .search-field, .modal .search-form input{ font-size:.5em; }
-  .modal .search-form input{ line-height:1.3; margin-bottom:0; }
+  .modal .search-field, .modal .search-form input, #mc-embedded-subscribe-form input, #mc-embedded-subscribe, #mc-embedded-subscribe-form label{ font-size:.5em; }
+  .modal .search-form input, #mc-embedded-subscribe{ line-height:1.3; margin-bottom:0; }
 
   .card-posts-deck .card-title, .carousel-featured h5{ font-size:1.2rem; }
   .card-posts-deck .card-excerpt, .carousel-featured .card-excerpt{ font-size: .8rem; }
@@ -1022,6 +1040,9 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h2{ font-size:1.5rem; }
   .post-content h3{ font-size:1.3rem; }
   .post-content h4{ font-size:1.1rem; }
+  .post-content h5{ font-size:1rem; }
+
+  .home-title{ font-size:1rem; }
 
   /* .social-icons a, .social i{ font-size:.8rem !important; } */
 
@@ -1041,10 +1062,12 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h2{ font-size:1.4rem; }
   .post-content h3{ font-size:1.2rem; }
   .post-content h4{ font-size:1rem; }
+  .post-content h5{ font-size:0.9rem; }
 
   .social-icons a, .social i{ font-size:.8rem !important; }
 
   .figure-caption-wide, .figure-caption{ font-size:.6rem;}
+
 }
 
 
@@ -1052,6 +1075,8 @@ a.alt-header__left__menu-trigger:hover{
 @media (min-width: 250px){
   .social{ font-size:.8rem; }
   .langs{ margin-left: 2rem; }
+
+  .home-title{ font-size:1rem; }
 
 }
 @media (min-width: 768px){
@@ -1094,7 +1119,11 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h2{ font-size:1.9rem; }
   .post-content h3{ font-size:1.7rem; }
   .post-content h4{ font-size:1.5rem; }
+  .post-content h5{ font-size:1.3rem; }
+
+  .home-title{ font-size:1.2rem; }
 }
+
 
 @media (min-width: 1080px){
   .alt-header .alt-user-nav .alt-header__sign-in svg {

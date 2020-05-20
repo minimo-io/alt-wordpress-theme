@@ -37,7 +37,7 @@ function echo_alt_suscription(){
   // Read in existing option value from database
   $alt_suscription_url = get_option( "alt_suscription_url" );
   ?>
-  <input type="url" placeholder="http://www.google.com/suscribe" value="<?php echo $alt_suscription_url; ?>" name="alt_suscription_url" value="" id="url" class="regular-text code">
+  <input type="url" placeholder="http://www.google.com/suscribe" value="<?php echo esc_attr($alt_suscription_url); ?>" name="alt_suscription_url" value="" id="url" class="regular-text code">
   <p class="description" id="email-description">
     <?php _e("This element is visible in the top menu.<br>Leave blank to hide it.", "altminimo"); ?>
   </p>
@@ -46,7 +46,7 @@ function echo_alt_suscription(){
 function echo_alt_whatsapp(){
   $alt_whatsapp_url = get_option( "alt_whatsapp_url" );
   ?>
-  <input type="url" placeholder="https://wa.me/59896666901" name="alt_whatsapp_url" value="<?php echo $alt_whatsapp_url; ?>" id="alt_whatsapp_url" class="regular-text code">
+  <input type="url" placeholder="https://wa.me/59896666901" name="alt_whatsapp_url" value="<?php echo esc_attr($alt_whatsapp_url); ?>" id="alt_whatsapp_url" class="regular-text code">
   <p class="description" id="email-description">
     <?php _e("This element is visible after opening the main menu.<br>Leave blank to hide it.", "altminimo"); ?>
   </p>
@@ -55,7 +55,7 @@ function echo_alt_whatsapp(){
 function echo_alt_us(){
   $alt_us_url = get_option( "alt_us_url" );
   ?>
-  <input type="url" placeholder="" name="alt_us_url" value="<?php echo $alt_us_url; ?>" id="alt_us_url" class="regular-text code">
+  <input type="url" placeholder="" name="alt_us_url" value="<?php echo esc_attr($alt_us_url); ?>" id="alt_us_url" class="regular-text code">
   <p class="description" id="email-description">
    <?php _e("This element is visible after opening the main menu.<br>Leave blank to hide it.", "altminimo"); ?>
   </p>

@@ -5,10 +5,10 @@
     <div class="modal-dialog modal-lg modal-dialog-centered" role="document">
       <div class="modal-content">
         <div class="modal-body">
-          <form id="searchform" class="search-form" method="get" action="<?php echo home_url('/'); ?>">
+          <form id="searchform" class="search-form" method="get" action="<?php echo esc_attr(home_url('/')); ?>">
               <div class="row">
                   <div class="col">
-                      <input type="text" id="search-field" autofocus class="search-field" name="s" placeholder="<?php _e("What are you looking for?", "altminimo"); ?>" value="<?php the_search_query(); ?>">
+                      <input type="text" id="search-field" class="search-field" name="s" placeholder="<?php _e("What are you looking for?", "altminimo"); ?>" value="<?php the_search_query(); ?>">
                   </div>
                   <div class="col-sm-auto text-center">
                       <input class="btn btn-warning btn-extralg btn-search-field" style="width:100%;" type="submit" value="<?php _e("Search", "altminimo"); ?>">

@@ -1,10 +1,17 @@
 <?php
 
-add_action ( 'edit_category_form_fields', 'alt_category_extra_fields');
+// add_action ( 'edit_category_form_fields', 'alt_category_extra_fields');
+add_action ( 'category_edit_form_fields', 'alt_category_extra_fields');
 add_action ( 'category_add_form_fields', 'alt_category_extra_fields');
+
+add_action ( 'edit_tag_form_fields', 'alt_category_extra_fields');
+add_action ( 'add_tag_form_fields', 'alt_category_extra_fields');
 
 add_action('create_category', 'alt_save_category_extra_fields', 10, 2);
 add_action ( 'edited_category', 'alt_save_category_extra_fields');
+
+add_action('create_post_tag', 'alt_save_category_extra_fields', 10, 2);
+add_action ( 'edit_post_tag', 'alt_save_category_extra_fields');
 
 
 function alt_category_extra_fields( $tag ) {    //check for existing featured ID
@@ -32,7 +39,7 @@ function alt_category_extra_fields( $tag ) {    //check for existing featured ID
     <select name="category_color" id="category_color">
       <?php
       foreach ($a_cats_colors as $color_key => $color_name){
-        echo "<option ".($category_color == $color_key ? "selected" : "")." value='".$color_key."'>".$color_name."</option>";
+        echo "<option ".($category_color == $color_key ? "selected" : "")." value='".esc_attr($color_key)."'>".esc_html($color_name)."</option>";
       }
       ?>
     </select>

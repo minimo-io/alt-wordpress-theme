@@ -10,7 +10,7 @@ $html_cats = "";
 foreach ($a_post_cats as $cat_key => $cat){
 
   $badge_color = alt_tax_color($cat);
-  $html_cats .= '&nbsp;<a href="'.get_category_link( $cat->term_id ).'" class="badge badge-'.$badge_color.'">'.$cat->name.'</a>';
+  $html_cats .= '&nbsp;<a href="'.esc_attr(get_category_link( $cat->term_id )).'" class="badge badge-'.$badge_color.'">'.esc_html($cat->name).'</a>';
 }
 
 ?>
@@ -18,7 +18,7 @@ foreach ($a_post_cats as $cat_key => $cat){
   <div class="card">
     <a href="<?php the_permalink(); ?>">
       <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
-      <?php if ($img_thumb){ ?><div class="card-image img-fluid" style="background-image:url(<?php echo $img_thumb; ?>);"></div><?php } ?>
+      <?php if ($img_thumb){ ?><div class="card-image img-fluid" style="background-image:url(<?php echo esc_attr($img_thumb); ?>);"></div><?php } ?>
 
 
       <div class="card-body">
@@ -27,8 +27,8 @@ foreach ($a_post_cats as $cat_key => $cat){
           <div class="card-text card-excerpt"><?php the_excerpt(); ?></div>
           <div class="card-text card-meta">
             <small class="text-muted">
-              <?php echo __("By", "altminimo").$author_name; ?> &nbsp;
-              <?php echo get_the_date('j M') ?>
+              <?php echo __("By", "altminimo")." ".esc_html($author_name); ?> &nbsp;
+              <?php echo esc_html(get_the_date('j M')); ?>
               <?php if (!is_category()) echo $html_cats; ?>
             </small>
           </div>

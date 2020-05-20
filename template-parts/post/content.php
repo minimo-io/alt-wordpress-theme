@@ -19,30 +19,30 @@ $category_link = get_category_link($o_category);
 <article id="post-<?php the_ID(); ?>" <?php post_class(Array("post", "container")); ?> itemscope itemtype="http://schema.org/BlogPosting">
   <header class="alt-post-header alt-top-title white-back">
     <?php if ($post_format == "aside"){ ?>
-      <a class="breadcrumb-back-button" href="<?php echo $category_link; ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
+      <a class="breadcrumb-back-button" href="<?php echo esc_attr($category_link); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
     <?php } ?>
     <h1 class="post-title basic-mono" itemprop="name headline"><?php the_title(); ?></h1>
-    <h2 class="post-subtitle"><?php echo strip_tags(get_the_excerpt(), "<span>"); ?></h2>
+    <h2 class="post-subtitle"><?php echo esc_html(strip_tags(get_the_excerpt(), "<span>")); ?></h2>
     <div class="container post-metabox">
 
 
         <div class="row justify-content-start">
           <div class="post-metabox-avatar-box">
-            <a href="<?php echo $author_url; ?>" rel="noopener">
-              <img alt="user-avatar" class="post-user-avatar img-fluid img-thumbnail" src="<?php echo $author_avatar; ?>" width="51" height="51">
+            <a href="<?php echo esc_attr($author_url); ?>" rel="noopener">
+              <img alt="user-avatar" class="post-user-avatar img-fluid img-thumbnail" src="<?php echo esc_attr($author_avatar); ?>" width="51" height="51">
             </a>
           </div>
           <div class="post-metabox-right">
 
-              <a href="<?php echo $author_url; ?>" rel="noopener"><?php echo $author_name; ?></a>
+              <a href="<?php echo esc_attr($author_url); ?>" rel="noopener"><?php echo esc_html($author_name); ?></a>
               <?php if ($post_format == "standard"){ ?>
-                <a class="breadcrumb-back-button" href="<?php echo $category_link; ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
+                <a class="breadcrumb-back-button" href="<?php echo esc_attr($category_link); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
               <?php } ?>
               <div class="post-metabox-bottom">
                 <a rel="noopener" href="<?php the_permalink(); ?>">
-                  <time datetime="<?php echo get_the_date('F j, Y') ?>" itemprop="datePublished"><?php echo get_the_date('j M') ?></time>
+                  <time datetime="<?php echo esc_attr(get_the_date('F j, Y')); ?>" itemprop="datePublished"><?php echo esc_html(get_the_date('j M')); ?></time>
 
-                </a> &middot; <span data-toggle="tooltip" data-placement="top" title="<?php echo $a_reading_time["word_count"]." ".__("words", "altminimo"); ?>"><?php echo $a_reading_time["reading_time"]; ?> min.</span>
+                </a> &middot; <span data-toggle="tooltip" data-placement="top" title="<?php echo esc_attr($a_reading_time["word_count"]." ".__("words", "altminimo")); ?>"><?php echo esc_html($a_reading_time["reading_time"]); ?> min.</span>
 
                 <span style="padding-left: 4px;">
                   <svg class="star-15px_svg__svgIcon-use" width="15" height="15" viewBox="0 0 15 15" style="margin-top: -2px;"><path d="M7.44 2.32c.03-.1.09-.1.12 0l1.2 3.53a.29.29 0 0 0 .26.2h3.88c.11 0 .13.04.04.1L9.8 8.33a.27.27 0 0 0-.1.29l1.2 3.53c.03.1-.01.13-.1.07l-3.14-2.18a.3.3 0 0 0-.32 0L4.2 12.22c-.1.06-.14.03-.1-.07l1.2-3.53a.27.27 0 0 0-.1-.3L2.06 6.16c-.1-.06-.07-.12.03-.12h3.89a.29.29 0 0 0 .26-.19l1.2-3.52z"></path></svg>
@@ -64,10 +64,9 @@ $category_link = get_category_link($o_category);
       echo "<div class='tag-box'>";
       foreach ($post_tags as $tag_key => $tag){
         $tag_link = get_tag_link($tag);
-        echo '<a class="btn btn-light" href="'.$tag_link.'" role="button">'.$tag->name.'</a> ';
+        echo '<a class="btn btn-light" href="'.esc_attr($tag_link).'" role="button">'.esc_html($tag->name).'</a> ';
       }
       echo '</div>';
-      // echo '<br>';
     }
     ?>
     <?php alt_pagination(); ?>
@@ -78,8 +77,8 @@ $category_link = get_category_link($o_category);
          <div class="row justify-content-start">
 
            <div class="col-flex post-bottom-metabox-left">
-             <a href="<?php echo $author_url; ?>" rel="noopener">
-               <img alt="user-avatar" class="post-bottom-user-avatar img-fluid img-thumbnail" src="<?php echo $author_avatar; ?>" width="80" height="80">
+             <a href="<?php echo esc_attr($author_url); ?>" rel="noopener">
+               <img alt="user-avatar" class="post-bottom-user-avatar img-fluid img-thumbnail" src="<?php echo esc_attr($author_avatar); ?>" width="80" height="80">
              </a>
            </div>
 
@@ -88,16 +87,16 @@ $category_link = get_category_link($o_category);
               <?php
               echo __("Wrote", "altminimo");
 
-              if ("post" == $post_type) echo __("for", "altminimo")." <a class='btn btn-sm btn-".$category_color."' href='".$category_link."' role='button'>".$post_categories[0]->name."</a>";
+              if ("post" == $post_type) echo " ".__("for", "altminimo")." <a class='btn btn-sm btn-".$category_color."' href='".esc_attr($category_link)."' role='button'>".esc_html($post_categories[0]->name)."</a>";
               ?>
 
              </div>
 
-               <a class="post-bottom-metabox-author-name" href="<?php echo $author_url; ?>" rel="noopener"><?php echo $author_name; ?></a>
+               <a class="post-bottom-metabox-author-name" href="<?php echo esc_attr($author_url); ?>" rel="noopener"><?php echo esc_html($author_name); ?></a>
 
                <div class="post-bottom-metabox-bottom">
 
-                 <div class="post-bottom-metabox-bottom-bio"><?php echo $author_bio; ?></div>
+                 <div class="post-bottom-metabox-bottom-bio"><?php echo esc_html($author_bio); ?></div>
 
                </div>
            </div>

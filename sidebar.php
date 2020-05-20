@@ -1,7 +1,7 @@
 <header class="alt-header alt-header--top">
   <div class="alt-container alt-header__container">
 
-    <a class="alt-header__logo__link" href="<?php echo get_site_url(); ?>">
+    <a class="alt-header__logo__link" href="<?php echo esc_attr(get_site_url()); ?>">
       <?php
       $logo_url = get_template_directory_uri().'/images/alt-logo-6.png';
 
@@ -9,7 +9,7 @@
         $custom_logo_id = get_theme_mod( 'custom_logo' );
         $logo_url = wp_get_attachment_image_src( $custom_logo_id , 'full' );
       }
-      echo '<img class="alt-header__logo" src="'.$logo_url.'" />';
+      echo '<img class="alt-header__logo" src="'.esc_attr($logo_url).'" />';
       ?>
     </a>
 
@@ -34,7 +34,7 @@
       <span class="header__separator alt-separator">/</span>
     </div>
     <?php
-    $alt_suscription_url = get_option( "alt_suscription_url" );
+    $alt_suscription_url = esc_attr(get_option( "alt_suscription_url" ));
     if (!empty($alt_suscription_url)){
     ?>
       <div class="alt-header__newsletter">
@@ -83,8 +83,8 @@
     <?php
     }
 
-    $alt_whatsapp_url = get_option( "alt_whatsapp_url" );
-    $alt_us_url = get_option( "alt_us_url" );
+    $alt_whatsapp_url = esc_attr(get_option( "alt_whatsapp_url" ));
+    $alt_us_url = esc_attr(get_option( "alt_us_url" ));
     ?>
 
     <div class="social">

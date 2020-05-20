@@ -171,18 +171,18 @@ if ( ! function_exists( 'alt_post_thumbnail' ) ) :
 					$image = get_post(get_post_thumbnail_id());
 					if ($post_format == "image"){
 						?>
-						<div class="post-format-image" style="background-image:url(<?php echo $thumbnail[0];  ?>);"></div>
+						<div class="post-format-image" style="background-image:url(<?php echo esc_attr($thumbnail[0]);  ?>);"></div>
 						<?php if (!empty($image->post_excerpt)){ ?>
-							<figcaption class="figure-caption figure-caption-wide text-right"><?php echo $image->post_excerpt; ?></figcaption>
+							<figcaption class="figure-caption figure-caption-wide text-right"><?php echo esc_html($image->post_excerpt); ?></figcaption>
 						<?php } ?>
 						<?php
 					}else{
 						?>
 						<center>
 							<figure class="figure">
-								<div class="post-thumbnail"><picture><img src="<?php echo $thumbnail[0]; ?>" class="img-fluid rounded" alt="<?php echo $image_alt; ?>"></picture>
+								<div class="post-thumbnail"><picture><img src="<?php echo esc_attr($thumbnail[0]); ?>" class="img-fluid rounded" alt="<?php echo esc_attr($image_alt); ?>"></picture>
 								</div>
-								<figcaption class="figure-caption text-right"><?php echo $image->post_excerpt; ?></figcaption>
+								<figcaption class="figure-caption text-right"><?php echo esc_html($image->post_excerpt); ?></figcaption>
 							</figure>
 						</center>
 						<?php
@@ -332,75 +332,6 @@ function alt_post_thumbnail_sizes_attr( $attr, $attachment, $size ) {
 add_filter( 'wp_get_attachment_image_attributes', 'alt_post_thumbnail_sizes_attr', 10, 3 );
 
 
-/**
- * Disable the emoji's
- */
-function disable_emojis() {
- remove_action( 'wp_head', 'print_emoji_detection_script', 7 );
- remove_action('wp_head', 'wp_generator');
- remove_action( 'admin_print_scripts', 'print_emoji_detection_script' );
- remove_action( 'wp_print_styles', 'print_emoji_styles' );
- remove_action( 'admin_print_styles', 'print_emoji_styles' );
- remove_filter( 'the_content_feed', 'wp_staticize_emoji' );
- remove_filter( 'comment_text_rss', 'wp_staticize_emoji' );
- remove_filter( 'wp_mail', 'wp_staticize_emoji_for_email' );
- add_filter( 'tiny_mce_plugins', 'disable_emojis_tinymce' );
- add_filter( 'wp_resource_hints', 'disable_emojis_remove_dns_prefetch', 10, 2 );
-}
-
-/**
-	* Add favicons
-	*/
-	function altminimo_child_favicons(){
-		if (!has_site_icon()) {
-	  ?>
-		  <link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/favs/apple-touch-icon.png">
-		  <link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon-32x32.png">
-		  <link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon-16x16.png">
-		  <link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/favs/site.webmanifest">
-		  <link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favs/safari-pinned-tab.svg" color="#000000">
-		  <link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon.ico">
-		  <meta name="msapplication-TileColor" content="#ff0000">
-		  <meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/favs/browserconfig.xml">
-		  <meta name="theme-color" content="#ffffff">
-	  <?php
-		}else{
-				wp_site_icon();
-		}
-	}
-
-
-	add_action('wp_head', 'altminimo_child_favicons');
-/**
- * Filter function used to remove the tinymce emoji plugin.
- *
- * @param array $plugins
- * @return array Difference betwen the two arrays
- */
-function disable_emojis_tinymce( $plugins ) {
-   if ( is_array( $plugins ) ) {
-   return array_diff( $plugins, array( 'wpemoji' ) );
-   } else {
-   return array();
-   }
-}
-/**
- * Remove emoji CDN hostname from DNS prefetching hints.
- *
- * @param array $urls URLs to print for resource hints.
- * @param string $relation_type The relation type the URLs are printed for.
- * @return array Difference betwen the two arrays.
- */
-function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {
-  if ( 'dns-prefetch' == $relation_type ) {
-  /** This filter is documented in wp-includes/formatting.php */
-  $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https://s.w.org/images/core/emoji/2/svg/' );
-
-  $urls = array_diff( $urls, array( $emoji_svg_url ) );
- }
-
-	return $urls;
-}
 
 function alt_adapt_comment_form( $arg ) {
     // $arg contains all the comment form defaults
@@ -448,19 +379,16 @@ function alt_loadmore_ajax_handler(){
 	die; // here we exit the script and even no wp_reset_query() required!
 }
 
-function alt_reveal_more_button($text){
+function alt_reveal_more_button($text, $color = ""){
 	$is_showmore = false;
-	if (strlen($text) > 250) $is_showmore = '<button data-original-height="" data-status="off" data-text-more="'.__("Read more", "altminimo").'" data-text-less="'.__("Read less", "altminimo").'" class="btn btn-light btn-sm btn-readmore">'.__("Read more", "altminimo").'</div>';
+	if (strlen($text) > 250) $is_showmore = '<button id="btn-readmore" data-original-height="" data-status="off" data-text-more="'.__("Read more", "altminimo").'" data-text-less="'.__("Read less", "altminimo").'" class="btn btn-'.(!empty($color)? $color : "light" ).' btn-sm btn-readmore">'.__("Read more", "altminimo").'</button>';
 	return $is_showmore;
 }
 // change default excerpt length
 add_filter( 'excerpt_length', function($length) {
     return 25;
 } );
-// add noindex nofollow on search
-function alt_norobots_head(){
-	if (is_search()) echo '<meta name="robots" content="noindex,follow" />';
-}
+
 
 function alt_content_end( $content ) {
 
@@ -472,14 +400,13 @@ function alt_content_end( $content ) {
     return $content;
 }
 
+
+
 add_filter( 'the_content', 'alt_content_end' );
-add_action('wp_head', 'alt_norobots_head');
 add_action('wp_ajax_loadmore', 'alt_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'alt_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
 // run the comment form defaults through the newly defined filter
 add_filter( 'comment_form_defaults', 'alt_adapt_comment_form' );
-
-add_action( 'init', 'disable_emojis' );
 // remove featured post from main query
 add_action( 'pre_get_posts', 'alt_remove_posts_from_home_page' );
 ?>
