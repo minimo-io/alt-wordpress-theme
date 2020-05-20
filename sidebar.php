@@ -3,7 +3,7 @@
 
     <a class="alt-header__logo__link" href="<?php echo esc_attr(get_site_url()); ?>">
       <?php
-      $logo_url = get_template_directory_uri().'/images/alt-logo-6.png';
+      // $logo_url = get_template_directory_uri().'/images/alt-logo-6.png';
 
       if ( has_custom_logo() ) {
         $custom_logo_id = get_theme_mod( 'custom_logo' );
@@ -11,7 +11,7 @@
         $logo_url = $logo_url[0];
         echo '<img class="alt-header__logo" src="'.esc_attr($logo_url).'" />';
       }else{
-        bloginfo("name");
+        echo get_bloginfo("name");
       }
 
       ?>
