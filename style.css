@@ -793,18 +793,21 @@ a.alt-header__left__menu-trigger:hover{
 }
 .alt-header__logo {
   color: #c56b25;
-  width:85px;
-  position:relative;
-  top:-3px;
-  transition:all .5s ease 0s;
+  width: auto;
+  position: relative;
+  top: -9px;
+  transition: all .5s ease 0s;
 }
 .alt-header__container{
   transition:all .5s ease 0s;
 }
 .alt-header-sticky-logo{
-  width: 70px;
+  /* width: 70px;
   position:relative;
-  top:-4px;
+  top:-4px; */
+  width: inherit;
+  position: relative;
+  top: -8px;
 }
 .admin-bar .alt-header{
   top:32px;
@@ -988,7 +991,10 @@ a.alt-header__left__menu-trigger:hover{
   .post-content h4{ font-size:1.2rem; }
   .post-content h5{ font-size:1.1rem; }
 
-  .alt-header__logo{ width:70px; }
+  .alt-header__logo{
+    /* width:70px; */
+    top:-4px;
+  }
   .alt-header__logo__link{ width:5.2rem; font-size:1rem; }
 
   .home-title{ line-height: normal; }
@@ -1022,7 +1028,10 @@ a.alt-header__left__menu-trigger:hover{
   .post-bottom-metabox-bottom-bio{ font-size: .8rem; line-height: 1rem; }
   .post-bottom-user-avatar{ width:40px; }
 
-  .alt-header__logo{ width:70px; }
+  .alt-header__logo{
+    /* width:70px;  */
+    top:-4px;
+  }
   .alt-header__logo__link{ width:5.2rem; }
 
   .modal .search-field, .modal .search-form input, #mc-embedded-subscribe-form input, #mc-embedded-subscribe, #mc-embedded-subscribe-form label{ font-size:.5em; }
