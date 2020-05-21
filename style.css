@@ -1002,7 +1002,7 @@ a.alt-header__left__menu-trigger:hover{
 @media (max-width: 340px){
   .hide-730{ display:none; }
   .alt-header__left{ padding-left:1.5rem; }
-  .alt-header__right{ padding-right:1.5rem; }
+  .alt-header__right{ padding-right:1.0rem; }
 
   .alt-header{ letter-spacing: 0.06rem;}
   .alt-header__left a, .alt-header__right a, .alt-separator{ font-size:10px; }
