@@ -282,18 +282,24 @@ function alt_scripts() {
 
 	global $wp_query;
 
-	wp_enqueue_style( 'alt-main-minimo', get_template_directory_uri()."/assets/css/main.css" );
 	wp_enqueue_style( 'alt-bootstrap-minimo', get_template_directory_uri()."/assets/css/bootstrap.min.css" );
 	wp_enqueue_style( 'alt-animate', get_template_directory_uri()."/assets/css/animate.css" );
-	wp_enqueue_style( 'alt-minimo-base', get_template_directory_uri()."/assets/css/minimo.css" );
-	wp_enqueue_style( 'alt-style', get_stylesheet_uri(), Array( "alt-main-minimo", "alt-bootstrap-minimo", "alt-animate", "alt-minimo-base"  ) );
+
+	// wp_enqueue_style( 'alt-main-minimo', get_template_directory_uri()."/assets/css/main.css" );
+	// wp_enqueue_style( 'alt-minimo-base', get_template_directory_uri()."/assets/css/minimo.css" );
+	// wp_enqueue_style( 'alt-style', get_stylesheet_uri(), Array( "alt-main-minimo", "alt-bootstrap-minimo", "alt-animate", "alt-minimo-base"  ) );
+
+	wp_enqueue_style( 'alt-style', 'https://cdn.jsdelivr.net/npm/@minimo-labs/alt-template/dist/alt.min.css', Array( "alt-bootstrap-minimo", "alt-animate"  ) );
+
+
 
 	wp_enqueue_script( 'alt-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'alt-html5', 'conditional', 'lt IE 9' );
 	wp_enqueue_script( 'alt-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), NULL, true );
 	wp_enqueue_script( 'alt-bootstrap', get_template_directory_uri().'/assets/js/bootstrap.min.js', array( 'jquery', 'alt-popper' ), NULL, true );
-	// wp_enqueue_script( 'alt-popper', get_template_directory_uri() . '/js/highlight.pack.js', array( 'jquery' ), NULL, true );
-	wp_enqueue_script( 'alt-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), NULL , true );
+
+	// wp_enqueue_script( 'alt-script', get_template_directory_uri() . '/assets/js/functions.js', array( 'jquery' ), NULL , true );
+	wp_enqueue_script( 'alt-script', 'https://cdn.jsdelivr.net/npm/@minimo-labs/alt-template/dist/alt.min.js', array( 'jquery' ), NULL , true );
 
 	if ( is_singular() ) wp_enqueue_script( "comment-reply" );
 
