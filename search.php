@@ -13,8 +13,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
       <h1 class="post-title basic-mono category-title" itemprop="name headline"><?php _e("Search", "altminimo"); ?>:&laquo;<?php echo esc_html( get_search_query() ); ?>&raquo;</h1>
     </header>
 
-        <div class="nav-scroller bg-white">
-					<div class="container second-container" style="padding-top: 1.6%;">
+        <div class="container nav-scroller bg-white">
 						<?php
             if ( have_posts() ):
     						echo '<div class="card-posts-deck card-group">
@@ -35,7 +34,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
          			get_template_part( 'template-parts/post/none', 'none' );
          		endif;
 					  ?>
-					</div>
+
         </div>
 				<div class="alt-pagination text-center">
 					<?php
