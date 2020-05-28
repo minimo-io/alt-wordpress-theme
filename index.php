@@ -2,10 +2,10 @@
 <?php get_sidebar(); ?>
 
 <main id="main" class="site-main" role="main">
-	<section id="sec-ethos" class="container main-container">
+	<section class="container primary-container">
 
         <div class="nav-scroller bg-white">
-					<div class="container second-container">
+					
 						<div class="alert alert-warning text-center" role="alert">
 						  <h1 class="home-title post-title basic-mono"><?php echo get_bloginfo("description"); ?><sup><a style="color:rgb(133, 100, 4);" title="Nosotros" class="home-title-link" href="<?php echo esc_attr(get_option( "alt_us_url" )) ?>"><i class="fas fa-info-circle"></i></a></sup></h1>
 						</div>
@@ -122,7 +122,7 @@
 					 		}
 						endif;
 					?>
-					</div>
+
         </div>
 				<div class="alt-pagination text-center">
 					<?php alt_pagination(); ?>
