@@ -6,7 +6,7 @@ $t_category_description = category_description();
 $is_readmore = alt_reveal_more_button($t_category_description);
 ?>
 <main id="main" class="site-main" role="main">
-	<section id="sec-ethos" class="container main-container category-container">
+	<section class="container primary-container category-container">
 
     <header class="alt-post-header alt-top-title category-header white-back">
       <a class="breadcrumb-back-button" href="<?php echo esc_attr(home_url()); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
@@ -16,8 +16,6 @@ $is_readmore = alt_reveal_more_button($t_category_description);
     </header>
 
         <div class="nav-scroller bg-white">
-					<div class="container second-container" style="padding-top: 1.6%;">
-
 						<?php
 						$sticky = get_option( 'sticky_posts' );
 						// args
@@ -127,7 +125,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 						</div>';
 
 					?>
-					</div>
+
         </div>
 				<div class="alt-pagination text-center">
 					<?php alt_pagination(); ?>
