@@ -20,11 +20,13 @@
   <nav class="alt-header__left">
     <a class="alt-header__left__menu-trigger" href="#" onclick="jQuery('#hamburger-show-menu').trigger('click'); return false;" data-menu-text="<?php _e("Menu", "altminimo"); ?>" data-menu-close="<?php _e("Close", "altminimo"); ?>" role="button" aria-expanded="true"><?php _e("Menu", "altminimo"); ?></a>
     <span class="alt-header__separator alt-separator">/</span>
-    <span class="alt-header__search">
+    <a href="#" data-toggle="modal" data-target="#alt-modal"><i class="fas fa-search"></i></a>
+    <!-- <span class="alt-header__search">
         <a class="alt-header__search-trigger" href="#" data-toggle="modal" data-target="#alt-modal">
           <span class="alt-header__search-icon"><svg xmlns="http://www.w3.org/2000/svg" width="15.44" height="15.441" viewBox="-0.449 -0.658 15.44 15.441"><circle fill="none" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" cx="5.974" cy="5.765" r="3.482"></circle><path fill="none" stroke="currentColor" stroke-width="1.2" stroke-miterlimit="10" d="M8.436 8.228l3.446 3.5"></path></svg></span>
         </a>
-    </span>
+    </span> -->
+
   </nav>
   <div class="alt-header__search__cover" onclick="document.body.classList.remove('search--open'); return false;"></div>
   <nav class="alt-header__right">
