@@ -406,8 +406,23 @@ function alt_content_end( $content ) {
     return $content;
 }
 
+function aipim_hook_css() {
+	if (! is_admin()){
+	?>
+	<link rel="apple-touch-icon" sizes="180x180" href="<?php echo get_template_directory_uri(); ?>/assets/favs/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon-16x16.png">
+	<link rel="manifest" href="<?php echo get_template_directory_uri(); ?>/assets/favs/site.webmanifest">
+	<link rel="mask-icon" href="<?php echo get_template_directory_uri(); ?>/assets/favs/safari-pinned-tab.svg" color="#5bbad5">
+	<link rel="shortcut icon" href="<?php echo get_template_directory_uri(); ?>/assets/favs/favicon.ico">
+	<meta name="msapplication-TileColor" content="#da532c">
+	<meta name="msapplication-config" content="<?php echo get_template_directory_uri(); ?>/assets/favs/browserconfig.xml">
+	<meta name="theme-color" content="#ffffff">
+	<?php
+	}
+}
 
-
+add_action('wp_head', 'aipim_hook_css');
 add_filter( 'the_content', 'alt_content_end' );
 add_action('wp_ajax_loadmore', 'alt_loadmore_ajax_handler'); // wp_ajax_{action}
 add_action('wp_ajax_nopriv_loadmore', 'alt_loadmore_ajax_handler'); // wp_ajax_nopriv_{action}
