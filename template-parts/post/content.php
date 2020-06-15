@@ -23,7 +23,7 @@ $category_link = get_category_link($o_category);
     <?php } ?>
     <h1 class="post-title basic-mono" itemprop="name headline"><?php the_title(); ?></h1>
     <h2 class="post-subtitle"><?php echo esc_html(strip_tags(get_the_excerpt(), "<span>")); ?></h2>
-    <div class="container post-metabox">
+    <div class="container post-metabox px-0 mt-3">
 
 
         <div class="row justify-content-start">
