@@ -293,6 +293,11 @@ function alt_scripts() {
 
 
 
+
+
+
+
+
 	wp_enqueue_script( 'alt-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'alt-html5', 'conditional', 'lt IE 9' );
 	wp_enqueue_script( 'alt-popper', get_template_directory_uri() . '/assets/js/popper.min.js', array( 'jquery' ), NULL, true );
