@@ -19,12 +19,12 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @media (min-width: 640px){
   /* sytanx highlighters */
   .enlighter-default{
-    font-size:.9rem;
+    font-size:.9rem !important;
   }
 }
 @media (max-width: 576px) {
   .enlighter-default{
-    font-size:.7rem;
+    font-size:.7rem !important;
   }
 }
 /* end sytanx highlighters */
