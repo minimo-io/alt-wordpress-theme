@@ -19,16 +19,22 @@ Use it to make something cool, have fun, and share what you've learned with othe
 @media (min-width: 640px){
   /* sytanx highlighters */
   .enlighter-default{
-    font-size:.9rem !important;
+    font-size:.8rem !important;
   }
 }
 @media (max-width: 576px) {
   .enlighter-default{
     font-size:.7rem !important;
   }
+  div.enlighter>div>div{
+    padding-left:0 !important;
+  }
 }
 .enlighter-linenumbers div.enlighter>div::before {
   width: 22px !important;
   min-width: 22px !important;
+}
+.enlighter-t-wpcustom.enlighter-linenumbers div.enlighter>div::before{
+padding: 1px 5px 1px 2px !important;
 }
 /* end sytanx highlighters */
