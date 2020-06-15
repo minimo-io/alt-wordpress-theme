@@ -286,6 +286,7 @@ function alt_scripts() {
 	wp_enqueue_style( 'alt-animate', get_template_directory_uri()."/assets/css/animate.css" );
 
 	wp_enqueue_style( 'alt-style', 'https://cdn.jsdelivr.net/npm/@minimo-labs/alt-template@0.5.5/dist/alt.min.css', Array( "alt-bootstrap-minimo", "alt-animate"  ), '0.5.5' );
+	wp_enqueue_style( 'alt-child-style', get_template_directory_uri()."/style.css", Array( "alt-style" ) );
 
 	wp_enqueue_script( 'alt-html5', get_template_directory_uri() . '/assets/js/html5.js', array(), '3.7.3' );
 	wp_script_add_data( 'alt-html5', 'conditional', 'lt IE 9' );
