@@ -28,7 +28,7 @@ Use it to make something cool, have fun, and share what you've learned with othe
   }
 }
 .enlighter-linenumbers div.enlighter>div::before {
-  width: 22px;
-  min-width: 22px;
+  width: 22px !important;
+  min-width: 22px !important;
 }
 /* end sytanx highlighters */
