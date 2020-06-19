@@ -15,11 +15,11 @@ $category_link = get_category_link($post_categories[0]);
 alt_post_video(get_the_content());
 ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(Array("post", "container")); ?> itemscope itemtype="http://schema.org/BlogPosting">
-  <header class="alt-post-header alt-top-title white-back">
+  <header class="alt-post-margins alt-top-title white-back">
     <a class="breadcrumb-back-button" href="<?php echo esc_attr($category_link); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
     <h1 class="post-title basic-mono" itemprop="name headline"><?php the_title(); ?></h1>
     <h2 class="post-subtitle"><?php echo esc_html(strip_tags(get_the_excerpt(), "<span>")); ?></h2>
-    <div class="container post-metabox px-0 mt-3">
+    <div class="container post-metabox mt-3 pl-2 pl-md-0">
 
         <div class="row justify-content-start">
           <div class="post-metabox-avatar-box">

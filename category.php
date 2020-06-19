@@ -8,7 +8,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 <main id="main" class="site-main" role="main">
 	<section class="container primary-container category-container">
 
-    <header class="alt-post-header alt-top-title category-header white-back">
+    <header class="alt-post-margins alt-top-title category-header white-back">
       <a class="breadcrumb-back-button" href="<?php echo esc_attr(home_url()); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
       <h1 class="post-title basic-mono category-title" itemprop="name headline"><?php single_cat_title(); ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span></h1>
       <h2 class="post-subtitle category-subtitle <?php echo (!empty($is_readmore) ? "read-more" : ""); ?>"><?php echo $t_category_description; ?></h2>
