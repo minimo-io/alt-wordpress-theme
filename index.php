@@ -7,7 +7,7 @@
         <div class="nav-scroller bg-white">
 
 						<div class="alert alert-warning text-center" role="alert">
-						  <h1 class="home-title post-title basic-mono"><?php echo get_bloginfo("description"); ?><sup><a title="Nosotros" class="home-title-link" href="<?php echo esc_attr(get_option( "alt_us_url" )) ?>"><i class="fas fa-info-circle"></i></a></sup></h1>
+						  <h1 class="home-title"><?php echo get_bloginfo("description"); ?><sup><a title="Nosotros" class="home-title-link" href="<?php echo esc_attr(get_option( "alt_us_url" )) ?>"><i class="fas fa-info-circle"></i></a></sup></h1>
 						</div>
 						<?php
 						$sticky = get_option( 'sticky_posts' );
