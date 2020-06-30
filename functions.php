@@ -436,11 +436,7 @@ function aipim_wp_nav_menu_objects( $items, $args ) {
 
 
 		// append icon
-		if( $icon ) {
-
-			$item->title .= ' <i class="'.$icon.'"></i>';
-
-		}
+		if( $icon ) $item->title = '<i class="'.$icon.'"></i>'.$item->title;
 
 	}
 
