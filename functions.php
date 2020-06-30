@@ -118,6 +118,14 @@ if ( ! function_exists( 'alt_setup' ) ) :
 		// Add support for responsive embeds.
 		add_theme_support( 'responsive-embeds' );
 
+		// Remove restrictions for categories
+		foreach ( array( 'pre_term_description' ) as $filter ) {
+		    remove_filter( $filter, 'wp_filter_kses' );
+		}
+		foreach ( array( 'term_description' ) as $filter ) {
+		    remove_filter( $filter, 'wp_kses_data' );
+		}
+
 
 	}
 endif; // alt_setup
