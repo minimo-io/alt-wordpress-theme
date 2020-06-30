@@ -426,24 +426,24 @@ function aipim_hook_css() {
 }
 
 
-// modify menu to display FontAwesome if present
-function aipim_wp_nav_menu_objects( $items, $args ) {
-	// loop
-	foreach( $items as &$item ) {
-
-		// vars
-		$icon = get_field('fa-class', $item);
-
-
-		// append icon
-		if( $icon ) $item->title = '<i class="'.$icon.'"></i>'.$item->title;
-
-	}
-
-	// return
-	return $items;
-
-}
+// // modify menu to display FontAwesome if present
+// function aipim_wp_nav_menu_objects( $items, $args ) {
+// 	// loop
+// 	foreach( $items as &$item ) {
+//
+// 		// vars
+// 		$icon = get_field('fa-class', $item);
+//
+//
+// 		// append icon
+// 		if( $icon ) $item->title = '<i class="'.$icon.'"></i>'.$item->title;
+//
+// 	}
+//
+// 	// return
+// 	return $items;
+//
+// }
 
 add_action('wp_head', 'aipim_hook_css');
 add_filter( 'the_content', 'alt_content_end' );
@@ -453,5 +453,5 @@ add_action('wp_ajax_nopriv_loadmore', 'alt_loadmore_ajax_handler'); // wp_ajax_n
 add_filter( 'comment_form_defaults', 'alt_adapt_comment_form' );
 // remove featured post from main query
 add_action( 'pre_get_posts', 'alt_remove_posts_from_home_page' );
-add_filter('wp_nav_menu_objects', 'aipim_wp_nav_menu_objects', 10, 2);
+// add_filter('wp_nav_menu_objects', 'aipim_wp_nav_menu_objects', 10, 2);
 ?>
