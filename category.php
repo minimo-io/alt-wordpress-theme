@@ -6,7 +6,7 @@ $t_category_description = category_description();
 $is_readmore = alt_reveal_more_button($t_category_description);
 ?>
 <main id="main" class="site-main" role="main">
-	<section class="container primary-container category-container">
+	<section class="container primary-container category-container nav-scroller bg-white">
 
     <header class="alt-post-margins alt-top-title category-header white-back">
       <a class="breadcrumb-back-button" href="<?php echo esc_attr(home_url()); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
@@ -24,7 +24,6 @@ $is_readmore = alt_reveal_more_button($t_category_description);
       <?php echo ($is_readmore ? $is_readmore : ""); ?>
     </header>
 
-    <div class="container nav-scroller bg-white">
 				<?php
 				$sticky = get_option( 'sticky_posts' );
 				// args
@@ -119,7 +118,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 
 
 				echo '<div class="card-posts-deck card-group">
-								<ul class="card-list row list-unstyled">';
+								<ul class="card-list row list-unstyled ml-0 mr-0">';
 				while ( have_posts() ) :
 					the_post();
           if (!in_array(get_the_ID(), $sticky)){
@@ -134,8 +133,6 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 				</div>';
 
 			?>
-
-    </div>
 		<div class="alt-pagination text-center">
 			<?php alt_pagination(); ?>
 		</div>
