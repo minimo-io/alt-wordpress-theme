@@ -10,6 +10,10 @@
 						  <h1 class="home-title"><?php echo get_bloginfo("description"); ?><sup><a title="Nosotros" class="home-title-link" href="<?php echo esc_attr(get_option( "alt_us_url" )) ?>"><i class="fas fa-info-circle"></i></a></sup></h1>
 						</div>
 						<?php
+						// add an action hook
+						aipim_head_extension();
+
+						// sticky stuff
 						$sticky = get_option( 'sticky_posts' );
 						if (is_home() && !is_paged()){
 						// args

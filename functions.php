@@ -424,8 +424,10 @@ function aipim_hook_css() {
 	<?php
 	}
 }
-
-
+// hook to be used to add content below the yellow action message at the index page.
+function aipim_head_extension() {
+	do_action('aipim_head_extension');
+}
 // // modify menu to display FontAwesome if present
 // function aipim_wp_nav_menu_objects( $items, $args ) {
 // 	// loop
