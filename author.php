@@ -15,7 +15,7 @@ $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('a
       <a class="breadcrumb-back-button" href="<?php echo esc_attr(home_url()); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
       <h1 class="post-title basic-mono category-title" itemprop="name headline">
 				<?php
-				$avatar = get_avatar_url($curauth->ID);
+				$avatar = get_avatar_url($curauth->ID);      
         echo "<img src='".$avatar."' width='48' />"; // kinda leta on tha updata
 				echo $curauth->nickname; ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span>
 			</h1>
