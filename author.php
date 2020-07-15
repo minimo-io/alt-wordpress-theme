@@ -4,6 +4,9 @@
 $o_cat = $wp_query->get_queried_object();
 $t_category_description = category_description();
 $is_readmore = alt_reveal_more_button($t_category_description);
+
+$curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('author_name')) : get_userdata(get_query_var('author'));
+
 ?>
 <main id="main" class="site-main" role="main">
 	<section class="container primary-container category-container nav-scroller bg-white">
@@ -18,7 +21,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 				}
 				if ($icon) echo '<i class="'.$icon.'"></i>';
 				?>
-				<?php single_cat_title(); ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span>
+				<?php echo $curauth->nickname; ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span>
 			</h1>
       <h2 class="post-subtitle category-subtitle <?php echo (!empty($is_readmore) ? "read-more" : ""); ?>"><?php echo $t_category_description; ?></h2>
       <?php echo ($is_readmore ? $is_readmore : ""); ?>
