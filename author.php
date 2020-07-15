@@ -16,7 +16,7 @@ $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('a
       <h1 class="post-title basic-mono category-title" itemprop="name headline">
 				<?php
 				$avatar = get_avatar_url($curauth->ID);
-        echo $avatar;
+        echo "<img src='".$avatar."' width='48' />";
 				echo $curauth->nickname; ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span>
 			</h1>
       <h2 class="post-subtitle category-subtitle <?php echo (!empty($is_readmore) ? "read-more" : ""); ?>"><?php echo $t_category_description; ?></h2>
