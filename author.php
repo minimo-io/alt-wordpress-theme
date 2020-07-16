@@ -19,8 +19,7 @@ $curauth = (get_query_var('author_name')) ? get_user_by('slug', get_query_var('a
 
         // sooo this is the last time i work via WP-pusher, need a local env.
 
-
-        echo "<img src='".$avatar."' width='48' class='rounded-circle mr-2' style='vertical-align:bottom;' />"; // So it is right, it kinda blocks us!
+        echo "<img src='".$avatar."' width='48' class='rounded-circle mr-2' style='vertical-align:bottom;vertical-align:bottom;' />"; // So it is right, it kinda blocks us!
 				echo $curauth->nickname; ?><span class="text-<?php echo alt_tax_color($o_cat); ?>">.</span>
 			</h1>
       <h2 class="post-subtitle category-subtitle <?php echo (!empty($is_readmore) ? "read-more" : ""); ?>"><?php echo $t_category_description; ?></h2>
