@@ -17,7 +17,7 @@ foreach ($a_post_cats as $cat_key => $cat){
 <li id="post-<?php the_ID(); ?>" class="col-12 post-list-item <?php echo (is_home() ? "" : "px-0 px-lg-1"); ?>">
 
 
-  <div class="card mb-2 mt-2">
+  <div class="card">
     <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
     <a href="<?php the_permalink(); ?>">
       <div class="row no-gutters">
