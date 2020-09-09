@@ -57,7 +57,7 @@ function echo_alt_whatsapp(){
 function echo_alt_subscriptionButtonText(){
   $alt_subscribe_button_url = get_option( "alt_subscribe_button_url" );
   ?>
-  <input type="url" placeholder="<?php _e("Subscribe", "aipim"); ?>" name="alt_subscribe_button_url" value="<?php echo esc_attr($alt_subscribe_button_url); ?>" id="alt_subscribe_button_url" class="regular-text code">
+  <input type="text" placeholder="<?php _e("Subscribe", "aipim"); ?>" name="alt_subscribe_button_url" value="<?php echo esc_attr($alt_subscribe_button_url); ?>" id="alt_subscribe_button_url" class="regular-text code">
   <p class="description" id="alt_subscribe_button_url">
     <?php _e("Menu button.", "altminimo"); ?>
   </p>

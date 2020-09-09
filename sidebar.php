@@ -35,12 +35,17 @@
     </div>
     <?php
     $alt_suscription_url = esc_attr(get_option( "alt_suscription_url" ));
+    $alt_subscriptionButtonText = esc_attr(get_option( "alt_subscriptionButtonText" ));
     if (!empty($alt_suscription_url)){
     ?>
       <div class="alt-header__newsletter">
         <a target="_blank" href="<?php echo $alt_suscription_url; ?>">
           <i class="fas fa-paper-plane hide-730"></i>
-          <?php _e("Subscribe", "altminimo"); ?>
+          <?php
+          $buttonText = __("Subscribe", "altminimo");
+          if (!empty($alt_subscriptionButtonText)) $buttonText = $alt_subscriptionButtonText;
+          echo $buttonText;
+          ?>
         </a>
       </div>
     <?php
