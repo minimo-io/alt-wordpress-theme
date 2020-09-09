@@ -112,7 +112,7 @@
 						if ( have_posts() ):
 							echo '<div class="card-posts-deck card-group">
 											<ul class="card-list row list-unstyled">';
-							$countCards = 0;
+							$countCards = 1;
 							while ( have_posts() ) :
 								the_post();
 								//get_template_part( 'template-parts/post/content', get_post_format() );
