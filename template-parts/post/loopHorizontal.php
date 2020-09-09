@@ -18,8 +18,9 @@ foreach ($a_post_cats as $cat_key => $cat){
 
 
   <div class="card">
-    <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
     <a href="<?php the_permalink(); ?>">
+    <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
+    
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="<?php echo esc_attr($img_thumb); ?>" class="card-img h-100" alt="porque-si" data-recalc-dims="1">
