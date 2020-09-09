@@ -27,7 +27,10 @@ foreach ($a_post_cats as $cat_key => $cat){
           <div class="card-text card-excerpt"><?php the_excerpt(); ?></div>
           <div class="card-text card-meta">
             <small class="text-muted">
-              <?php echo __("By", "altminimo")." ".esc_html($author_name); ?> &nbsp;
+              <?php
+              // echo __("By", "altminimo")." ".esc_html($author_name);
+              ?>
+              <!-- &nbsp; -->
               <?php echo esc_html(get_the_date('j M')); ?>
               <?php if (!is_category()) echo $html_cats; ?>
             </small>
