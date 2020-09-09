@@ -14,7 +14,7 @@ foreach ($a_post_cats as $cat_key => $cat){
 }
 
 ?>
-<li id="post-<?php the_ID(); ?>" class="col-12 d-flex post-list-item <?php echo (is_home() ? "" : "px-0 px-lg-1"); ?>">
+<li id="post-<?php the_ID(); ?>" class="col-12 post-list-item <?php echo (is_home() ? "" : "px-0 px-lg-1"); ?>">
 
 
   <div class="card mb-2 mt-2">
