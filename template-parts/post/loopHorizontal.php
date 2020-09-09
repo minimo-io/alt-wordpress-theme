@@ -20,7 +20,7 @@ foreach ($a_post_cats as $cat_key => $cat){
   <div class="card">
     <a href="<?php the_permalink(); ?>">
     <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
-    
+
       <div class="row no-gutters">
         <div class="col-md-4">
           <img src="<?php echo esc_attr($img_thumb); ?>" class="card-img h-100" alt="porque-si" data-recalc-dims="1">
@@ -35,27 +35,4 @@ foreach ($a_post_cats as $cat_key => $cat){
     </a>
   </div>
 
-  <!-- <div class="card">
-    <a href="<?php the_permalink(); ?>">
-      <div class="overlay overlay-<?php echo $badge_color; ?>"></div>
-      <?php if ($img_thumb){ ?><div class="card-image img-fluid" style="background-image:url(<?php echo esc_attr($img_thumb); ?>);"></div><?php } ?>
-
-
-      <div class="card-body">
-
-          <h5 class="card-title"><?php the_title(); ?></h5>
-          <div class="card-text card-excerpt"><?php the_excerpt(); ?></div>
-          <div class="card-text card-meta">
-            <small class="text-muted">
-              <?php echo __("By", "altminimo")." ".esc_html($author_name); ?> &nbsp;
-              <?php echo esc_html(get_the_date('j M')); ?>
-              <?php if (!is_category()) echo $html_cats; ?>
-            </small>
-          </div>
-
-      </div>
-
-    </a>
-
-  </div> -->
 </li>
