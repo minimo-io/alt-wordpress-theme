@@ -377,7 +377,7 @@ function alt_loadmore_ajax_handler(){
 
 			// look into your theme code how the posts are inserted, but you can use your own HTML of course
 			// do you remember? - my example is adapted for Twenty Seventeen theme
-			get_template_part( 'template-parts/post/loop', "loop" );
+			get_template_part( 'template-parts/post/loopHorizontal', "loop" );
 			// for the test purposes comment the line above and uncomment the below one
 			 //the_title();
 
