@@ -112,10 +112,18 @@
 						if ( have_posts() ):
 							echo '<div class="card-posts-deck card-group">
 											<ul class="card-list row list-unstyled">';
+							$countCards = 0;
 							while ( have_posts() ) :
 								the_post();
 								//get_template_part( 'template-parts/post/content', get_post_format() );
-								get_template_part( 'template-parts/post/loop', "loop" );
+								if ($countCards > 3){
+									get_template_part( 'template-parts/post/loopHorizontal', "loop" );
+								}else{
+									get_template_part( 'template-parts/post/loop', "loop" );
+								}
+
+
+								$countCards++;
 							endwhile;
 							echo '</ul></div>';
 						else :
