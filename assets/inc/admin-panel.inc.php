@@ -23,12 +23,14 @@ function alt_theme_menu() {
 function alt_menu_page_settings() {
   // Segundo paso...registrar las secciones y campos para que WP los reconozca
   register_setting( 'alt-menu-page-settings-group', 'alt_suscription_url' );
+  register_setting( 'alt-menu-page-settings-group', 'alt_subscriptionButtonText' );
   register_setting( 'alt-menu-page-settings-group', 'alt_whatsapp_url' );
   register_setting( 'alt-menu-page-settings-group', 'alt_us_url' );
 
   add_settings_section( 'alt_settings_page_url', __("Links", "altminimo"), null, 'alt_settings_page_url_options' );
 
   add_settings_field( 'alt_suscription_url', __("Subscription", "altminimo"), 'echo_alt_suscription', 'alt_settings_page_url_options', 'alt_settings_page_url' );
+  add_settings_field( 'alt_subscriptionButtonText', __("Subscription", "altminimo"), 'echo_alt_subscriptionButtonText', 'alt_settings_page_url_options', 'alt_settings_page_url' );
   add_settings_field( 'alt_suscription_whatsapp', "Whatsapp", 'echo_alt_whatsapp', 'alt_settings_page_url_options', 'alt_settings_page_url' );
   add_settings_field( 'alt_suscription_us', "Us", 'echo_alt_us', 'alt_settings_page_url_options', 'alt_settings_page_url' );
 }
@@ -52,6 +54,15 @@ function echo_alt_whatsapp(){
   </p>
   <?php
 }
+function echo_alt_subscriptionButtonText(){
+  $alt_subscribe_button_url = get_option( "alt_subscribe_button_url" );
+  ?>
+  <input type="url" placeholder="<?php _e("Subscribe", "aipim"); ?>" name="alt_subscribe_button_url" value="<?php echo esc_attr($alt_subscribe_button_url); ?>" id="alt_subscribe_button_url" class="regular-text code">
+  <p class="description" id="alt_subscribe_button_url">
+    <?php _e("Menu button.", "altminimo"); ?>
+  </p>
+  <?php
+}
 function echo_alt_us(){
   $alt_us_url = get_option( "alt_us_url" );
   ?>
@@ -71,12 +82,14 @@ function alt_settings_page() {
   // If they did, this hidden field will be set to 'Y'
   if( isset($_POST["alt_suscription_url"])
   || isset($_POST["alt_whatsapp_url"])
+  || isset($_POST["alt_subscriptionButtonText"])
   || isset($_POST["alt_us_url"])) {
       // Read their posted value
 
 
       // Save the posted value in the database
       update_option( "alt_suscription_url", $_POST["alt_suscription_url"] );
+      update_option( "alt_subscriptionButtonText", $_POST["alt_subscriptionButtonText"] );
       update_option( "alt_whatsapp_url", $_POST["alt_whatsapp_url"] );
       update_option( "alt_us_url", $_POST["alt_us_url"] );
 
