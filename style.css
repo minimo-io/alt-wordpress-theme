@@ -120,7 +120,7 @@ padding: 1px 5px 1px 2px !important;
   .subscriptionBox input, .subscriptionBox button{ font-size:12px; padding:12px; }
 }
 @media (max-width: 768px) {
-
+  .subscriptionBox .card-body{ margin-right:0; }
 }
 @media (max-width: 992px) {
 

@@ -9,7 +9,13 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 	<section class="container primary-container category-container nav-scroller bg-white">
 
     <header class="alt-post-margins alt-top-title category-header white-back">
-      <a class="breadcrumb-back-button" href="<?php echo esc_attr(home_url()); ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
+			<?php
+			$backUrl = esc_attr(home_url());
+			if($o_cat->category_parent > 0){
+				$backUrl = get_category_link($o_cat->category_parent);
+			}
+			?>
+			<a class="breadcrumb-back-button" href="<?php echo $backUrl; ?>" aria-expanded="true" role="button"><i class="fas fa-reply"></i>&nbsp;<?php _e("back", "altminimo"); ?></a>
       <h1 class="post-title basic-mono category-title" <?php echo ($o_cat->category_parent > 0 ? "style='line-height:1.1rem;'" : "") ?> itemprop="name headline">
 				<?php
 				if($o_cat->category_parent > 0){
