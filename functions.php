@@ -390,7 +390,7 @@ function alt_loadmore_ajax_handler(){
 
 function alt_reveal_more_button($text, $color = ""){
 	$is_showmore = false;
-	if (strlen($text) > 250) $is_showmore = '<button id="btn-readmore" data-original-height="" data-status="off" data-text-more="'.__("Read more", "altminimo").'" data-text-less="'.__("Read less", "altminimo").'" class="btn btn-'.(!empty($color)? $color : "light" ).' btn-sm btn-readmore">'.__("Read more", "altminimo").'</button>';
+	if (strlen($text) > 250) $is_showmore = '<button id="btn-readmore" data-original-height="" data-status="off" data-text-more="'.__("Read more", "altminimo").'" data-text-less="'.__("Read less", "altminimo").'" class="btn btn-'.(!empty($color)? $color : "light" ).' btn-sm btn-readmore sm-btn-block">'.__("Read more", "altminimo").'</button>';
 	return $is_showmore;
 }
 // change default excerpt length
@@ -398,6 +398,26 @@ add_filter( 'excerpt_length', function($length) {
     return 25;
 } );
 
+/**
+ * Check if given term has child terms
+ * @author @Howdy_McGee
+ *
+ * @param Integer $term_id
+ * @param String $taxonomy
+ *
+ * @return Boolean
+ */
+function alt_category_has_children( $term_id = 0, $taxonomy = 'category' ) {
+    $children = get_categories( array(
+        'child_of'      => $term_id,
+        'taxonomy'      => $taxonomy,
+        'hide_empty'    => false,
+				'orderby' => 'ID',
+		    'order'   => 'ASC',
+        // 'fields'        => 'ids',
+    ) );
+    return ( $children );
+}
 
 function alt_content_end( $content ) {
 
@@ -446,6 +466,31 @@ function aipim_head_extension() {
 // 	return $items;
 //
 // }
+
+function alt_subscription_box(){
+	?>
+	<!-- subscription box -->
+<div class="mt-4 mb-4 subscriptionBoxContainer">
+	<div class="card p-sm-4 p-md-4 signup-form subscriptionBox">
+		<div class="card-body z-index-6000">
+			<h2>¿Necesitas ayuda para generar ingresos por Internet?</h2>
+			<p class="lead">Suscribite <strong>¡gratis!</strong> para obtener tips exclusivos</p>
+			<form action="" class="ng-untouched ng-pristine ng-invalid mt-4">
+				<div class="input-group">
+					<input type="email" name="EMAIL" placeholder="Correo electrónico..." aria-label="Tu correo electrónico..." formcontrolname="email" class="form-control ng-untouched ng-pristine ng-invalid">
+					<div class="input-group-append">
+						<button type="submit" class="btn-signup btn btn-danger font-weight-500">Suscribirse</button>
+					</div>
+					<div class="invalid-feedback mt-2">Email requerido.</div>
+				</div>
+			</form>
+		</div>
+		<img src="<?php echo get_template_directory_uri(); ?>/images/pana.svg" alt="" class="subscriptionBox-img d-none d-md-block">
+		<div class="overlay overlay-danger"></div>
+	</div>
+</div>
+	<?php
+}
 
 add_action('wp_head', 'aipim_hook_css');
 add_filter( 'the_content', 'alt_content_end' );

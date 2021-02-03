@@ -14,6 +14,12 @@ This theme, like WordPress, is licensed under the GPL.
 Use it to make something cool, have fun, and share what you've learned with others.
 */
 
+.btn-category, #btn-readmore{
+  float:left;
+  top:-16px;
+}
+.btn-category{ margin-left:15px; }
+
 /* sytanx highlighters tweaks */
 @media (min-width: 640px){
   .enlighter-default{
@@ -27,6 +33,15 @@ Use it to make something cool, have fun, and share what you've learned with othe
   div.enlighter>div>div{
     padding-left:0 !important;
   }
+  .sm-btn-block{
+    display: block;
+    width: 100%;
+  }
+  .btn-category, #btn-readmore{
+    margin-left:0;
+    margin-top:.4rem;
+
+  }
 }
 .enlighter-linenumbers div.enlighter>div::before {
   width: 22px !important;
@@ -36,3 +51,81 @@ Use it to make something cool, have fun, and share what you've learned with othe
 padding: 1px 5px 1px 2px !important;
 }
 /* end sytanx highlighters tweaks */
+
+/* Subscription Box */
+.subscriptionBoxContainer{
+  clear:both;
+  max-width:1000px;
+  margin:auto;
+}
+.subscriptionBox{
+  overflow: hidden;
+}
+.subscriptionBox h2{
+  font-size: 1.5rem;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.2;
+  color: #363d47;
+  font-family: Nunito, sans-serif;
+}
+.subscriptionBox .lead{
+  font-size: 1rem;
+  font-weight: 400;
+  color: #69707a!important;
+}
+.subscriptionBox .card-body{ margin-right:11rem; }
+.subscriptionBox .subscriptionBox-img {
+    position: absolute;
+    right: 3rem;
+    top: 2rem;
+    width: 9rem;
+}
+.input-group-append {
+    margin-left: -1px;
+}
+.input-group-append {
+    display: flex;
+}
+.input-group-append .btn {
+    position: relative;
+    z-index: 2;
+}
+.input-group>.input-group-append>.btn {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
+.invalid-feedback {
+    display: none;
+    width: 100%;
+    margin-top: .25rem;
+    font-size: .875em;
+    color: #e81500;
+}
+.subscriptionBox .btn-signup {
+    border-top-right-radius: .35rem !important;
+    border-bottom-right-radius: .35rem !important;
+    cursor:pointer !important;
+    box-shadow: none !important;
+}
+/* End Subscription Box */
+
+/*  Bootstrap like breakpoints -------------- */
+@media (max-width: 576px) {
+  .subscriptionBoxContainer{ margin-top:6.5rem !important; margin-bottom:6.5rem !important; }
+  .subscriptionBox{ border-radius:0; }
+  .subscriptionBox .card-body{ margin-right:0; }
+  .subscriptionBox h2{ font-size:1.2rem; }
+  .subscriptionBox .lead{ font-size:.8rem; }
+  .subscriptionBox input, .subscriptionBox button{ font-size:12px; padding:12px; }
+}
+@media (max-width: 768px) {
+
+}
+@media (max-width: 992px) {
+
+
+}
+@media (max-width: 1200px) {
+
+}
