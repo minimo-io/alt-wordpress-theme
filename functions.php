@@ -473,8 +473,8 @@ function alt_subscription_box(){
 <div class="mt-4 mb-4 subscriptionBoxContainer">
 	<div class="card p-sm-4 p-md-4 signup-form subscriptionBox">
 		<div class="card-body z-index-6000">
-			<h2>¿Necesitas ayuda para generar ingresos por Internet?</h2>
-			<p class="lead">Suscribite <strong>¡gratis!</strong> para obtener tips exclusivos</p>
+			<h2>¿Necesitas generar ingresos por Internet?</h2>
+			<p class="lead">Suscribite <strong>¡gratis!</strong> y recibe alertas y noticias de nuevas oportunidades</p>
 			<form action="" class="ng-untouched ng-pristine ng-invalid mt-4">
 				<div class="input-group">
 					<input type="email" name="EMAIL" placeholder="Correo electrónico..." aria-label="Tu correo electrónico..." formcontrolname="email" class="form-control ng-untouched ng-pristine ng-invalid">

@@ -61,7 +61,7 @@ $is_readmore = alt_reveal_more_button($t_category_description);
 				if ( isset( $sticky[0] ) ):
 				?>
 				<?php if( $the_query->have_posts() ): ?>
-					<div id="carousel-homepage" class="carousel slide carousel-featured" data-ride="carousel">
+					<div id="carousel-homepage" class="carousel slide carousel-featured mt-5" data-ride="carousel">
 							<div class="carousel-inner">
 								<?php
 								$c_carrousel = 0;
